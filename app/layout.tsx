@@ -29,6 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#00c8ff" />
+        <link rel="apple-touch-icon" href="/icon-192.png" />
+
         {process.env.NODE_ENV === "production" && (
           <Script
             async
@@ -37,6 +41,7 @@ export default function RootLayout({
           />
         )}
       </head>
+
       <body
         className={`${sora.variable} ${jetbrainsMono.variable} antialiased`}
       >
