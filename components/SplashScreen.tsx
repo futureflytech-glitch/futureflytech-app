@@ -225,8 +225,8 @@ export default function SplashScreen() {
             <Image
               src="/airplane.png"
               alt="Aviation"
-              width={42}
-              height={42}
+              width={78}
+              height={78}
             />
           </div>
 
