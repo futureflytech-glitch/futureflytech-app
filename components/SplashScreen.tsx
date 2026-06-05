@@ -4,52 +4,164 @@ import Image from "next/image";
 
 export default function SplashScreen() {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden bg-[#030712]">
+    <>
+      <style jsx>{`
+        @keyframes logoIntro {
+          0% {
+            opacity: 0;
+            transform: scale(0.65);
+          }
+          60% {
+            opacity: 1;
+            transform: scale(1.08);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
 
-      {/* Background Glow */}
-      <div className="absolute w-[420px] h-[420px] rounded-full bg-cyan-500/10 blur-3xl animate-pulse"></div>
+        @keyframes glowPulse {
+          0% {
+            transform: scale(0.8);
+            opacity: 0.3;
+          }
+          50% {
+            transform: scale(1.15);
+            opacity: 0.7;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 0.5;
+          }
+        }
 
-      {/* Floating AI Particles */}
-      <div className="absolute top-[30%] left-[42%] w-2 h-2 rounded-full bg-cyan-300/70 animate-ping"></div>
+        @keyframes titleReveal {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+            letter-spacing: 12px;
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+            letter-spacing: 3px;
+          }
+        }
 
-      <div
-        className="absolute top-[33%] right-[42%] w-1.5 h-1.5 rounded-full bg-cyan-300/70 animate-ping"
-        style={{ animationDelay: "0.4s" }}
-      />
+        @keyframes taglineReveal {
+          0% {
+            opacity: 0;
+            transform: translateY(15px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
 
-      <div
-        className="absolute bottom-[42%] left-[40%] w-1.5 h-1.5 rounded-full bg-cyan-300/70 animate-ping"
-        style={{ animationDelay: "0.8s" }}
-      />
+        @keyframes float1 {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
 
-      <div
-        className="absolute bottom-[40%] right-[40%] w-2 h-2 rounded-full bg-cyan-300/70 animate-ping"
-        style={{ animationDelay: "1.2s" }}
-      />
+        @keyframes float2 {
+          0%,
+          100% {
+            transform: translateY(-2px);
+          }
+          50% {
+            transform: translateY(3px);
+          }
+        }
 
-      {/* Logo */}
-      <div className="relative flex items-center justify-center">
+        @keyframes float3 {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+        }
 
-        {/* Growing Glow */}
+        @keyframes particle {
+          0% {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(-10px);
+          }
+        }
+      `}</style>
+
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden bg-[#030712]">
+
+        {/* Floating particles */}
+
         <div
-          className="absolute rounded-full bg-cyan-400/20 blur-3xl"
+          className="absolute w-2 h-2 rounded-full bg-cyan-300"
           style={{
-            width: 240,
-            height: 240,
-            animation:
-              "glowGrow 1.8s ease-out forwards, glowPulse 2.5s ease-in-out infinite 1.8s",
+            top: "28%",
+            left: "38%",
+            animation: "particle 2s ease-in-out infinite alternate",
           }}
         />
 
-        {/* Logo Animation */}
+        <div
+          className="absolute w-3 h-3 rounded-full bg-cyan-400"
+          style={{
+            top: "32%",
+            right: "38%",
+            animation: "particle 2.5s ease-in-out infinite alternate",
+          }}
+        />
+
+        <div
+          className="absolute w-2 h-2 rounded-full bg-cyan-300"
+          style={{
+            top: "58%",
+            left: "32%",
+            animation: "particle 2.2s ease-in-out infinite alternate",
+          }}
+        />
+
+        <div
+          className="absolute w-3 h-3 rounded-full bg-cyan-400"
+          style={{
+            top: "61%",
+            right: "30%",
+            animation: "particle 2.4s ease-in-out infinite alternate",
+          }}
+        />
+
+        {/* Glow */}
+
+        <div
+          className="absolute rounded-full bg-cyan-400/40 blur-[100px]"
+          style={{
+            width: 320,
+            height: 320,
+            animation: "glowPulse 2.5s ease-in-out infinite",
+          }}
+        />
+
+        {/* Logo */}
+
         <div
           style={{
-            animation:
-              "logoGrow 1.8s cubic-bezier(0.22,1,0.36,1) forwards, floatLogo 3s ease-in-out infinite 1.8s",
+            animation: "logoIntro 1.2s ease forwards",
           }}
         >
           <Image
-            src="/logo.png"
+            src="/icon-512.png"
             alt="Future Fly Tech"
             width={250}
             height={250}
@@ -57,115 +169,70 @@ export default function SplashScreen() {
           />
         </div>
 
+        {/* Title */}
+
+        <h1
+          className="mt-8 text-white font-semibold tracking-[3px] text-center"
+          style={{
+            fontSize: "38px",
+            animation: "titleReveal .9s ease forwards",
+            textShadow: "0 0 20px rgba(0,220,255,.18)",
+          }}
+        >
+          FUTURE FLY TECH
+        </h1>
+
+        {/* Tagline */}
+
+        <p
+          className="mt-5 text-cyan-300 text-center"
+          style={{
+            fontSize: "20px",
+            animation: "taglineReveal .9s ease forwards",
+            animationDelay: ".4s",
+          }}
+        >
+          Turning Dreams Into Reality
+        </p>
+
+        {/* Career Journey */}
+
+        <div className="flex items-center gap-5 mt-12">
+
+          <div style={{ animation: "float1 2.2s ease-in-out infinite" }}>
+            <Image
+              src="/cap.png"
+              alt="Graduation"
+              width={42}
+              height={42}
+            />
+          </div>
+
+          <span className="text-cyan-400 text-3xl">→</span>
+
+          <div style={{ animation: "float2 2.2s ease-in-out infinite" }}>
+            <Image
+              src="/brain.png"
+              alt="AI"
+              width={42}
+              height={42}
+            />
+          </div>
+
+          <span className="text-cyan-400 text-3xl">→</span>
+
+          <div style={{ animation: "float3 2.2s ease-in-out infinite" }}>
+            <Image
+              src="/plane.png"
+              alt="Aviation"
+              width={42}
+              height={42}
+            />
+          </div>
+
+        </div>
+
       </div>
-
-      {/* Title */}
-      <h1 className="mt-5 text-white text-[42px] font-bold tracking-[1px] whitespace-nowrap text-center px-4">
-        FUTURE FLY TECH
-      </h1>
-
-      {/* Tagline */}
-      <p className="mt-3 text-cyan-300 text-[28px] font-medium text-center">
-        Turning Dreams Into Reality
-      </p>
-
-      {/* Journey */}
-      <div className="mt-7 flex items-center gap-4">
-
-        <div
-          className="animate-pulse"
-          style={{ animationDelay: "0s" }}
-        >
-          <Image
-            src="/graduation.png"
-            alt="Education"
-            width={30}
-            height={30}
-          />
-        </div>
-
-        <span className="text-cyan-400 text-2xl">→</span>
-
-        <div
-          className="animate-pulse"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <Image
-            src="/brain.png"
-            alt="AI"
-            width={30}
-            height={30}
-          />
-        </div>
-
-        <span className="text-cyan-400 text-2xl">→</span>
-
-        <div
-          className="animate-pulse"
-          style={{ animationDelay: "0.8s" }}
-        >
-          <Image
-            src="/airplane.png"
-            alt="Aviation"
-            width={30}
-            height={30}
-          />
-        </div>
-
-      </div>
-
-      {/* Animations */}
-      <style jsx>{`
-        @keyframes logoGrow {
-          0% {
-            transform: scale(0.55);
-            opacity: 0;
-          }
-
-          40% {
-            opacity: 1;
-          }
-
-          100% {
-            transform: scale(1);
-            opacity: 1;
-          }
-        }
-
-        @keyframes floatLogo {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-
-          50% {
-            transform: translateY(-6px);
-          }
-        }
-
-        @keyframes glowGrow {
-          0% {
-            transform: scale(0.4);
-            opacity: 0;
-          }
-
-          100% {
-            transform: scale(1);
-            opacity: 1;
-          }
-        }
-
-        @keyframes glowPulse {
-          0%,
-          100% {
-            opacity: 0.45;
-          }
-
-          50% {
-            opacity: 0.8;
-          }
-        }
-      `}</style>
-    </div>
+    </>
   );
 }
