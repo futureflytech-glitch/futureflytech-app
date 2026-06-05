@@ -203,8 +203,8 @@ export default function SplashScreen() {
             <Image
               src="/graduation.png"
               alt="Graduation"
-              width={42}
-              height={42}
+              width={102}
+              height={102}
             />
           </div>
 
@@ -214,8 +214,8 @@ export default function SplashScreen() {
             <Image
               src="/brain.png"
               alt="AI"
-              width={42}
-              height={42}
+              width={102}
+              height={102}
             />
           </div>
 
@@ -225,8 +225,8 @@ export default function SplashScreen() {
             <Image
               src="/airplane.png"
               alt="Aviation"
-              width={78}
-              height={78}
+              width={102}
+              height={102}
             />
           </div>
 
