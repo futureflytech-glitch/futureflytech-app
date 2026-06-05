@@ -161,7 +161,7 @@ export default function SplashScreen() {
           }}
         >
           <Image
-            src="/icon-512.png"
+            src="/logo.png"
             alt="Future Fly Tech"
             width={250}
             height={250}
@@ -201,7 +201,7 @@ export default function SplashScreen() {
 
           <div style={{ animation: "float1 2.2s ease-in-out infinite" }}>
             <Image
-              src="/cap.png"
+              src="/graduation.png"
               alt="Graduation"
               width={42}
               height={42}
@@ -223,7 +223,7 @@ export default function SplashScreen() {
 
           <div style={{ animation: "float3 2.2s ease-in-out infinite" }}>
             <Image
-              src="/plane.png"
+              src="/airplane.png"
               alt="Aviation"
               width={42}
               height={42}
