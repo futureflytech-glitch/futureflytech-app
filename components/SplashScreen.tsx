@@ -6,42 +6,42 @@ export default function SplashScreen() {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden bg-[#030712]">
 
-      {/* Background Ambient Glow */}
-      <div className="absolute w-[450px] h-[450px] rounded-full bg-cyan-400/10 blur-3xl animate-pulse"></div>
+      {/* Background Glow */}
+      <div className="absolute w-[420px] h-[420px] rounded-full bg-cyan-500/10 blur-3xl animate-pulse"></div>
 
-      {/* Floating Particles */}
-      <div className="absolute top-[30%] left-[42%] w-2 h-2 rounded-full bg-cyan-300/60 animate-ping"></div>
+      {/* Floating AI Particles */}
+      <div className="absolute top-[30%] left-[42%] w-2 h-2 rounded-full bg-cyan-300/70 animate-ping"></div>
 
       <div
-        className="absolute top-[32%] right-[42%] w-1.5 h-1.5 rounded-full bg-cyan-300/60 animate-ping"
+        className="absolute top-[33%] right-[42%] w-1.5 h-1.5 rounded-full bg-cyan-300/70 animate-ping"
         style={{ animationDelay: "0.4s" }}
       />
 
       <div
-        className="absolute bottom-[42%] left-[40%] w-1.5 h-1.5 rounded-full bg-cyan-300/60 animate-ping"
+        className="absolute bottom-[42%] left-[40%] w-1.5 h-1.5 rounded-full bg-cyan-300/70 animate-ping"
         style={{ animationDelay: "0.8s" }}
       />
 
       <div
-        className="absolute bottom-[40%] right-[40%] w-2 h-2 rounded-full bg-cyan-300/60 animate-ping"
+        className="absolute bottom-[40%] right-[40%] w-2 h-2 rounded-full bg-cyan-300/70 animate-ping"
         style={{ animationDelay: "1.2s" }}
       />
 
-      {/* Logo Section */}
+      {/* Logo */}
       <div className="relative flex items-center justify-center">
 
         {/* Growing Glow */}
         <div
           className="absolute rounded-full bg-cyan-400/20 blur-3xl"
           style={{
-            width: 280,
-            height: 280,
+            width: 240,
+            height: 240,
             animation:
               "glowGrow 1.8s ease-out forwards, glowPulse 2.5s ease-in-out infinite 1.8s",
           }}
         />
 
-        {/* Logo */}
+        {/* Logo Animation */}
         <div
           style={{
             animation:
@@ -51,8 +51,8 @@ export default function SplashScreen() {
           <Image
             src="/logo.png"
             alt="Future Fly Tech"
-            width={220}
-            height={220}
+            width={250}
+            height={250}
             priority
           />
         </div>
@@ -60,17 +60,17 @@ export default function SplashScreen() {
       </div>
 
       {/* Title */}
-      <h1 className="mt-6 text-white text-5xl font-bold tracking-[2px]">
+      <h1 className="mt-5 text-white text-[42px] font-bold tracking-[1px] whitespace-nowrap text-center px-4">
         FUTURE FLY TECH
       </h1>
 
       {/* Tagline */}
-      <p className="mt-3 text-cyan-300 text-2xl font-medium">
+      <p className="mt-3 text-cyan-300 text-[28px] font-medium text-center">
         Turning Dreams Into Reality
       </p>
 
       {/* Journey */}
-      <div className="mt-10 flex items-center gap-4">
+      <div className="mt-7 flex items-center gap-4">
 
         <div
           className="animate-pulse"
@@ -84,7 +84,7 @@ export default function SplashScreen() {
           />
         </div>
 
-        <span className="text-cyan-400 text-xl">→</span>
+        <span className="text-cyan-400 text-2xl">→</span>
 
         <div
           className="animate-pulse"
@@ -98,7 +98,7 @@ export default function SplashScreen() {
           />
         </div>
 
-        <span className="text-cyan-400 text-xl">→</span>
+        <span className="text-cyan-400 text-2xl">→</span>
 
         <div
           className="animate-pulse"
@@ -139,7 +139,7 @@ export default function SplashScreen() {
           }
 
           50% {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
           }
         }
 
@@ -166,7 +166,6 @@ export default function SplashScreen() {
           }
         }
       `}</style>
-
     </div>
   );
 }
